@@ -99,7 +99,7 @@ npm install tailwindcss-animations
 }
 ```
 
-The default configuration generates the following CSS:
+The above configuration would generate the following CSS:
 
 ```css
 /* @tailwind base */
