@@ -260,14 +260,10 @@ The default configuration generates the following CSS:
 
 /* configurable with the "animationFillMode" theme object */
 .animation-fill-none {
-  --animation-fill-mode: none;
   animation-fill-mode: none;
-  animation-fill-mode: var(--animation-fill-mode);
 }
 .animation-fill-forwards {
-  --animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  animation-fill-mode: var(--animation-fill-mode);
 }
 .animation-fill-[key] {
   animation-fill-mode: [value];
