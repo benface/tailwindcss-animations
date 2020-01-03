@@ -94,7 +94,7 @@ module.exports = {
     animationPlayState: ['responsive'],
   },
   plugins: [
-    require('tailwindcss-animations')(),
+    require('tailwindcss-animations'),
   ],
 };
 ```
