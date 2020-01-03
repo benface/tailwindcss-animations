@@ -649,6 +649,188 @@ test('the default duration and iteration count can be set to the CSS defaults', 
   });
 });
 
+test('the duration, timing function, delay, iteration count, direction, and fill mode can be extended', () => {
+  return generatePluginCss({
+    theme: {
+      extend: {
+        animationDuration: {
+          '6s': '6s',
+        },
+        animationTimingFunction: {
+          'step-start': 'step-start',
+          'step-end': 'step-end',
+        },
+        animationDelay: {
+          '6s': '6s',
+        },
+        animationIterationCount: {
+          'twice': '2',
+        },
+        animationDirection: {
+          'direction-inherit': 'inherit',
+        },
+        animationFillMode: {
+          'default': 'both',
+        },
+      },
+    },
+    variants: {
+      animations: [],
+      animationDuration: [],
+      animationTimingFunction: [],
+      animationDelay: [],
+      animationIterationCount: [],
+      animationDirection: [],
+      animationFillMode: [],
+      animationPlayState: [],
+    },
+  }).then(css => {
+    expect(css).toMatchCss(`
+      *, *::before, *::after {
+        --animation-duration: 1s;
+        --animation-iteration-count: infinite;
+        --animation-fill-mode: both;
+      }
+      .animation-none {
+        animation-name: none;
+      }
+      .animation-0s {
+        --animation-duration: 0s;
+        animation-duration: 0s;
+        animation-duration: var(--animation-duration);
+      }
+      .animation-1s {
+        --animation-duration: 1s;
+        animation-duration: 1s;
+        animation-duration: var(--animation-duration);
+      }
+      .animation-2s {
+        --animation-duration: 2s;
+        animation-duration: 2s;
+        animation-duration: var(--animation-duration);
+      }
+      .animation-3s {
+        --animation-duration: 3s;
+        animation-duration: 3s;
+        animation-duration: var(--animation-duration);
+      }
+      .animation-4s {
+        --animation-duration: 4s;
+        animation-duration: 4s;
+        animation-duration: var(--animation-duration);
+      }
+      .animation-5s {
+        --animation-duration: 5s;
+        animation-duration: 5s;
+        animation-duration: var(--animation-duration);
+      }
+      .animation-6s {
+        --animation-duration: 6s;
+        animation-duration: 6s;
+        animation-duration: var(--animation-duration);
+      }
+      .animation-linear {
+        animation-timing-function: linear;
+      }
+      .animation-ease {
+        animation-timing-function: ease;
+      }
+      .animation-ease-in {
+        animation-timing-function: ease-in;
+      }
+      .animation-ease-out {
+        animation-timing-function: ease-out;
+      }
+      .animation-ease-in-out {
+        animation-timing-function: ease-in-out;
+      }
+      .animation-step-start {
+        animation-timing-function: step-start;
+      }
+      .animation-step-end {
+        animation-timing-function: step-end;
+      }
+      .animation-delay-0s {
+        animation-delay: 0s;
+      }
+      .animation-delay-1s {
+        animation-delay: 1s;
+      }
+      .animation-delay-2s {
+        animation-delay: 2s;
+      }
+      .animation-delay-3s {
+        animation-delay: 3s;
+      }
+      .animation-delay-4s {
+        animation-delay: 4s;
+      }
+      .animation-delay-5s {
+        animation-delay: 5s;
+      }
+      .animation-delay-6s {
+        animation-delay: 6s;
+      }
+      .animation-once {
+        --animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        animation-iteration-count: var(--animation-iteration-count);
+      }
+      .animation-infinite {
+        --animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        animation-iteration-count: var(--animation-iteration-count);
+      }
+      .animation-twice {
+        --animation-iteration-count: 2;
+        animation-iteration-count: 2;
+        animation-iteration-count: var(--animation-iteration-count);
+      }
+      .animation-normal {
+        animation-direction: normal;
+      }
+      .animation-reverse {
+        animation-direction: reverse;
+      }
+      .animation-alternate {
+        animation-direction: alternate;
+      }
+      .animation-alternate-reverse {
+        animation-direction: alternate-reverse;
+      }
+      .animation-direction-inherit {
+        animation-direction: inherit;
+      }
+      .animation-fill-none {
+        --animation-fill-mode: none;
+        animation-fill-mode: none;
+        animation-fill-mode: var(--animation-fill-mode);
+      }
+      .animation-fill-forwards {
+        --animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        animation-fill-mode: var(--animation-fill-mode);
+      }
+      .animation-fill-backwards {
+        --animation-fill-mode: backwards;
+        animation-fill-mode: backwards;
+        animation-fill-mode: var(--animation-fill-mode);
+      }
+      .animation-fill-both {
+        --animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-fill-mode: var(--animation-fill-mode);
+      }
+      .animation-running {
+        animation-play-state: running;
+      }
+      .animation-paused {
+        animation-play-state: paused;
+      }
+    `);
+  });
+});
+
 test('variants can be customized', () => {
   return generatePluginCss({
     theme: {
