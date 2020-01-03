@@ -15,7 +15,7 @@ const generatePluginCss = (config) => {
         },
         corePlugins: false,
         plugins: [
-          animationsPlugin(),
+          animationsPlugin,
         ],
       }, config)
     )

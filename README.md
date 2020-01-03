@@ -10,7 +10,7 @@ npm install tailwindcss-animations
 
 ```js
 // tailwind.config.js
-{
+module.exports = {
   theme: {
     animations: { // defaults to {}; the following are examples
       'spin': {
@@ -96,7 +96,7 @@ npm install tailwindcss-animations
   plugins: [
     require('tailwindcss-animations')(),
   ],
-}
+};
 ```
 
 The above configuration would generate the following CSS:
