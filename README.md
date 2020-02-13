@@ -1,5 +1,9 @@
 # Animations Plugin for Tailwind CSS
 
+## Requirements
+
+This plugin requires Tailwind CSS 1.2 or later. If your project uses an older version of Tailwind, you should install the latest 1.x version of this plugin (`npm install tailwindcss-animations@1.x`).
+
 ## Installation
 
 ```bash
