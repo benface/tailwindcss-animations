@@ -1,6 +1,6 @@
-# [BLACK LIVES MATTER](https://blacklivesmatters.carrd.co)
+# ⛔️ DEPRECATED
 
-### Be aware. Be angry. Do better. Demand change. Show your support any way you can. Click on the link above to find protests, petitions, and other ways to help. DO NOT LET IT GO SILENT.
+Tailwind CSS 1.6 (released in July 2020) has [animation utilities](https://tailwindcss.com/docs/animation) built-in, so I am discontinuing this plugin. Feel free to fork it if you want, but I recommend migrating to Tailwind’s official solution and write custom utilities for `animation-duration` and other specific properties when needed.
 
 # Animations Plugin for Tailwind CSS
 
